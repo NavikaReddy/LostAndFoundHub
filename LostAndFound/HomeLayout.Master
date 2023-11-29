@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeLayout.master.cs" Inherits="LostAndFound.HomeLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .title,.navbar,.footer{
+            color:aliceblue;
+            font-weight:bold;
+        }
+        a{
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+   
+  <form id="form1" runat="server">
+    <table style="width:100%; height:60px; background-color:#901d26; text-align:center; border-style:solid">
+        <tr>
+            <td class="title" style="color: white; font-weight: bold; font-size: 24px;">
+                Welcome to Lost & Found
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%; height:60px; background-color:#901d26; text-align:center; border-style:solid">
+        <tr class="navbar">
+            <td><a href="Home.aspx" style="color: white; text-decoration: none; padding: 15px;">Home</a></td>
+            <td><a href="LostItems.aspx" style="color: white; text-decoration: none; padding: 15px;">View Lost Items</a></td>
+            <td><a href="FoundItems.aspx" style="color: white; text-decoration: none; padding: 15px;">View Found items</a></td>
+            <td><a href="ReportFound.aspx" style="color: white; text-decoration: none; padding: 15px;">Report a found item</a></td>
+            <td><a href="ReportLost.aspx" style="color: white; text-decoration: none; padding: 15px;">Report your lost item</a></td>
+            <td><a href="SearchFound.aspx" style="color: white; text-decoration: none; padding: 15px;">Search items</a></td>            
+            <td><a href="Profile.aspx" style="color: white; text-decoration: none; padding: 15px;">Profile</a></td>
+            <td><asp:LinkButton ID="Logout" runat="server" Text="Logout" style="color: white; text-decoration: none; padding: 15px;" OnClick="Logout_Click"></asp:LinkButton></td>
+        </tr>
+    </table>
+    <div style="margin:20px; padding:20px; border-style:solid; background-color:#dfdfdf" class="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <table style="width:100%; background-color:#901d26; text-align:center; border-style:solid">
+        <tr>
+            <td class="footer" style="color: white; font-weight: bold; padding: 10px;">
+                www.l&p.com @2023
+            </td>
+        </tr>
+    </table>
+</form>
+       
+             
+                      
+           
+               
+         
+                                                
+                        
+            
+        
+              
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

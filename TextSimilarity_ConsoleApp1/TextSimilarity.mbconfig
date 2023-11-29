@@ -1,0 +1,87 @@
+﻿{
+  "Scenario": "SentenceSimilarity",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\navik\\OneDrive\\Documents\\textSimilarity.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Desc1",
+        "ColumnPurpose": "SourceSentence",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Desc2",
+        "ColumnPurpose": "ComparisonSentence",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Similarity",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SentenceSimilarityRegression",
+        "Score": 0.21048812557291835,
+        "RuntimeInSeconds": 118.517,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "LabelColumnName": "Similarity",
+            "Sentence1ColumnName": "Desc1",
+            "Sentence2ColumnName": "Desc2",
+            "ScoreColumnName": "Score",
+            "BatchSize": 32,
+            "MaxEpochs": 10,
+            "Architecture": "Roberta"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "SentenceSimilarityRegression"
+    },
+    "Schema": "e0",
+    "MetricName": "Pearson-correlation",
+    "ModelFilePath": "C:\\Users\\navik\\source\\repos\\LostAndFound\\LostAndFound\\TextSimilarity.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 1,
+    "Type": "SentenceSimilarityTrainingOption",
+    "TrainingTime": 2147483647,
+    "LabelColumn": "Similarity",
+    "SourceSentence": "Desc1",
+    "ComparisonSentence": "Desc2",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}
