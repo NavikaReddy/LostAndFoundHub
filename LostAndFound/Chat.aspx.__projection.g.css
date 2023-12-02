@@ -1,0 +1,95 @@
+
+/* BEGIN EXTERNAL SOURCE */
+
+        
+        /* Styles for sender's message */
+.sender-message {
+    text-align: right;
+    color: #ffffff;
+    background-color: #007bff; /* Change the background color as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    float:right;
+}
+
+/* Styles for receiver's message */
+.receiver-message {
+    text-align: left;
+    color: #000000;
+    background-color: #e6e6e6; /* Change the background color as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    float:left;
+}
+
+
+        /* Left side styling (20% of page) */
+        #leftSide {
+            float: left;
+            width: 20%;
+            background-color: #f2f2f2;
+            padding: 20px;
+            overflow-y: auto; /* Add scrollbar for the user list */
+            height: 75vh; /* Adjust the height as needed */
+        }
+
+        #leftSide a {
+            color: #3366cc;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Right side styling (80% of page) */
+        #rightSide {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto; /* Add scrollbar for the chat content */
+            height: 71vh; /* Adjust the height as needed */
+        }
+
+
+        #Label1 {
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 40%; /* Adjust left position to match the width of the left side */
+    width: 70%; /* Adjust width to match the width of the right side */
+    background-color: #f2f2f2; /* Adjust background color as needed */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+
+        /* UpdatePanel1 styling */
+        #UpdatePanel1 {
+            background-color: #e6e6e6;
+            padding: 20px;
+        }
+/* BEGIN EXTERNAL SOURCE */
+div {
+
+}
+/* END EXTERNAL SOURCE */
+
+/* BEGIN EXTERNAL SOURCE */
+Button {
+
+}
+/* END EXTERNAL SOURCE */
+
+
+        /* TextBox1 and Button1 styling */
+        #TextBox1 {
+            display: block;
+            margin-bottom: 10px;
+            //width: calc(100% - 22px); /* Adjust the width as needed */
+            height: 51px;
+        }
+
+        #Button1 {
+            display: block;
+            margin-top: 10px; /* Add space between the text box and the button */
+        }
+
+/* END EXTERNAL SOURCE */

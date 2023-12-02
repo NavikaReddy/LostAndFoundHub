@@ -24,5 +24,7 @@ In a world that can sometimes feel disconnected, our Lost and Found website aims
 So, whether you're here to report a lost item, search for something you've misplaced, or extend a helping hand to someone who's lost their belongings, you're 
     in the right place. Welcome to our Lost and Found community, where lost becomes found, and strangers become friends. Together, we can make a difference one 
     lost item at a time.
+       <span style="color:red;font-weight:bold">*Importantly, the website explicitly disclaims responsibility for the delivery of lost items or the verification of user identities;
+           these responsibilities lie solely with the users involved.</span> 
     </pre>
 </asp:Content>

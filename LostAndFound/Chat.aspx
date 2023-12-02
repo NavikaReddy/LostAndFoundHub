@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeLayout.Master" AutoEventWireup="true" CodeBehind="Chat.aspx.cs" Inherits="LostAndFound.Chat" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeLayout.Master" AutoEventWireup="true" CodeBehind="Chat.aspx.cs" Inherits="LostAndFound.Chat" Async="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
  <style>
-        
-        /* Styles for sender's message */
+/* Styles for sender's message */
 .sender-message {
     text-align: right;
     color: #ffffff;
@@ -10,7 +9,8 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    float:right;
+    float: right;
+    margin-left:800px;
 }
 
 /* Styles for receiver's message */
@@ -21,64 +21,62 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    float:left;
+    float: left;
 }
 
+/* Left side styling (20% of page) */
+#leftSide {
+    float: left;
+    width: 20%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    overflow-y: auto; /* Add scrollbar for the user list */
+    height: 75vh; /* Adjust the height as needed */
+}
 
-        /* Left side styling (20% of page) */
-        #leftSide {
-            float: left;
-            width: 20%;
-            background-color: #f2f2f2;
-            padding: 20px;
-            overflow-y: auto; /* Add scrollbar for the user list */
-            height: 75vh; /* Adjust the height as needed */
-        }
+#leftSide a {
+    color: #3366cc;
+    display: block;
+    margin-bottom: 10px;
+}
 
-        #leftSide a {
-            color: #3366cc;
-            display: block;
-            margin-bottom: 10px;
-        }
+/* Right side styling (80% of page) */
+#rightSide {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto; /* Add scrollbar for the chat content */
+    height: 75vh; /* Adjust the height as needed */
+}
 
-        /* Right side styling (80% of page) */
-        #rightSide {
-            width: 80%;
-            padding: 20px;
-            overflow-y: auto; /* Add scrollbar for the chat content */
-            height: 71vh; /* Adjust the height as needed */
-        }
-
-
-        #Label1 {
+#Label1 {
     margin-bottom: 10px;
     position: fixed;
     top: 0;
     left: 40%; /* Adjust left position to match the width of the left side */
-    width: 70%; /* Adjust width to match the width of the right side */
+    width: 60%; /* Adjust width to match the width of the right side */
     background-color: #f2f2f2; /* Adjust background color as needed */
     z-index: 1; /* Ensure it appears above other elements */
 }
 
+/* UpdatePanel1 styling */
+#UpdatePanel1 {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
 
-        /* UpdatePanel1 styling */
-        #UpdatePanel1 {
-            background-color: #e6e6e6;
-            padding: 20px;
-        }
+/* TextBox1 and Button1 styling */
+#TextBox1 {
+   display:block; 
+    margin-bottom: 10px;
+    height: 51px;
+    /*width: 10p;*/ /* Adjust the width as needed */
+}
 
-        /* TextBox1 and Button1 styling */
-        #TextBox1 {
-            display: block;
-            margin-bottom: 10px;
-            //width: calc(100% - 22px); /* Adjust the width as needed */
-            height: 51px;
-        }
-
-        #Button1 {
-            display: block;
-            margin-top: 10px; /* Add space between the text box and the button */
-        }
+#Button1 {
+    display: block;
+    margin-top: 10px;
+    margin-left:100px;
+}
 </style>
 
 
@@ -109,8 +107,11 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 <asp:PlaceHolder ID="ChatControls" runat="server">
-                    <asp:TextBox ID="TextBox1" runat="server" width="400px" height="51px"></asp:TextBox>
-                    <asp:Button ID="Button1" runat="server" Text="Send" OnClick="Button1_Click" />
-                </asp:PlaceHolder>
+    <div style="margin-top:30">
+                    <asp:TextBox ID="TextBox1" runat="server" width="770px" height="51px"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Send" CssClass="btn btn-success" OnClick="Button1_Click" style="margin-left:30px"/>
+                
+</div>                
+        </asp:PlaceHolder>
     </div>
 </asp:Content>

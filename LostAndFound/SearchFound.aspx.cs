@@ -187,10 +187,19 @@ namespace LostAndFound
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    string inner = "Go to profile->chat and contact the user " + reader["name"];
-                    string str = "alert('" + inner + " ');";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", str, true);
+                    string databaseName = reader["name"].ToString().Trim();
+                    string sessionName = Session["name"].ToString().Trim();
+
+                    if (!String.Equals(databaseName, sessionName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Response.Redirect("Chat.aspx?user=" + HttpUtility.UrlEncode(databaseName));
+                    }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('You posted this item');", true);
+                    }
                 }
+
             }
             catch (Exception ex)
             {
